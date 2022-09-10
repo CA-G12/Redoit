@@ -17,6 +17,9 @@ app.get('/', (req, res) => {
 app.get('/signup', (req, res) => {
   res.sendFile(join(__dirname, '..', 'public', 'html', 'signup.html'));
 });
+app.get('/login', (req, res) => {
+  res.sendFile(join(__dirname, '..', 'public', 'html', 'login.html'));
+});
 app.get('/profile/:id', (req, res) => {
   res.sendFile(join(__dirname, '..', 'public', 'html', 'profile.html'));
 });
