@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@200;300;400;500;700&family=Jost&family=Lato&family=Montserrat:wght@100;400&family=Noto+Sans:ital,wght@1,300;1,400;1,500&family=Open+Sans:wght@300&family=Oswald:wght@200&family=Poiret+One&family=Poppins:ital,wght@0,300;0,500;0,600;1,700&family=Quicksand:wght@400;500&family=Raleway:wght@300&family=Readex+Pro&family=Roboto+Mono&family=Roboto:ital,wght@1,300&family=Smooch&family=Space+Mono&family=Tajawal:wght@300&family=Ubuntu:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Sans',sans-serif;
+}
+header{
+    height:100vh;
+    background: #DAE0E6;
+}
+header nav{
+    width:100%;
+    height:5vh;
+    background: #fff;
+    padding:0 20px;
+    display:flex;
+    align-items: center;
+}
+header nav .logo-container{
+    width:117px;
+    height:100%;
+    display: flex;
+    align-items: center;
+}
+header nav .logo-container .logo{
+    width:32px;
+    height:32px;
+    margin-right: 8px;
+
+}
+header nav .logo-container svg:last-child{
+    height:18px;
+
+}
+header nav button{
+    width:268px;
+    height:34px;
+    background: none;
+    border: none;
+    outline: none;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header nav button .title-container{
+    width:68px;
+    height:100%;
+    display: flex;
+    align-items: center;
+}
+header nav button .title-container i{
+   font-size: 20px;
+   margin-right: 10px;
+}
+header nav button .title-container span{
+    font-family: 'IBM Plex Sans',sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+header nav button > i{
+    font-weight: light;
+}
+header nav .inputField{
+    width: 590px;
+    height:36px;
+    background: #f6f7e8;
+    position: relative;
+}
+header nav .inputField input{
+    width:100%;
+    height:100%;
+    outline: none;
+    border: none;
+    background:rgb(246,247,248);
+    border-radius: 5px;
+    padding-left: 46px;
+}
+header nav .inputField .search-icon{
+    width:20px;
+    height:20px;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    left:15px;
+}
+header nav .login,
+header nav .signup{
+    background: #edeff1;
+    width:110px;
+    height:32px;
+    color:#1c1c1c;
+    font-size: 14px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'IBM Plex Sans',sans-serif;
+    margin: 0 10px;
+}
+header .wrapper{
+    width:100%;
+    height:94vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:20px 24px;
+}
+header .wrapper .post-wrapper{
+    width:640px;
+    height:100%;
+}
+.post-wrapper .create-post{
+    width:100%;
+    height:58px;
+    margin-bottom: 16px;
+    background: #fff;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+.post-wrapper .create-post .img-container{
+    width:50px;
+    height:50px;
+    position: relative;
+}
+.post-wrapper .create-post .img-container img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+.post-wrapper .create-post .img-container span{
+    width:18px;
+    height:18px;
+    background: #46d160;
+    border-radius: 50%;
+    position: absolute;
+    top:65%;
+    left:55%;
+    z-index: 100;
+    border:2px solid #fff;
+}
+.post-wrapper .create-post input{
+    width:486px;
+    height:38px;
+    padding:0 16px;
+    margin-right: 8px;
+    border: none;
+    outline: none;
+    background: rgb(246,247,248);
+    border-radius: 5px;
+    border:1px solid #eee
+}
+.create-post i{
+    font-size: 20px;
+    margin-left: 8px;
+    margin-right: 10px;
+    color:#1c1c1c;
+}
+.post-wrapper .actual-post{
+    width:100%;
+    /* height:252px; */
+    background: #fff;
+    display: flex;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    position: relative;
+}
+.post-wrapper .actual-post .popUp{
+    width:300px;
+    height:300px;
+    position: absolute;
+    background: #fff;
+    z-index: 999;
+    top:50%;
+    left:50%;
+    opacity: 0;
+    pointer-events: none;
+}
+.post-wrapper .actual-post .popUp.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+.actual-post .vote-container{
+    width:40px;
+    padding:8px 4px 8px 0;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.actual-post .vote-container img{
+    width:20px;
+    height:20px;
+}
+.actual-post .vote-container span{
+    padding:8px; 
+}
+.actual-post .vote-container .downvote{
+    transform: rotate(180deg);
+}
+.actual-post .content{
+    width:598px;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+
+}
+.actual-post .content .title-container{
+    width:100%;
+    height:35px;
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+    margin-bottom: 8px;
+}
+.actual-post .content .title-container img{
+    width:20px;
+    height:20px;
+    background: none;
+    border-radius: 50%;
+    margin-right:5px;
+}
+.actual-post .content .title-container a{
+    text-decoration: none;
+    font-size: 12px;
+    color: #1c1c1c;
+    font-family: 'IBM Plex Sans',sans-serif;
+    font-weight: 600;
+}
+.actual-post .content .title-container svg{
+    width:10px;
+    height:10px;
+    fill:#0079D3;
+    margin-right:5px;
+}
+.actual-post .content .title-container .text-container{
+    width:558px;
+    height:20px;
+    display: flex;
+    align-items: center;
+    color:#787c7e;
+    font-size: 12px;
+    font-family: 'IBM Plex Sans',sans-serif;
+}
+.content .title-container .text-container a{
+    color:#787c7e;
+    margin: 0 5px;
+}
+.content .actual-content{
+    width:575px;
+    color:#222;
+    font-size: 18px;
+    font-family: 'IBM Plex Sans',sans-serif;
+    font-weight: 600;
+}
+.content .actual-content .tag{
+    width:162px;
+    padding:2px 8px;
+    background: #6b6031;
+    font-size: 12px;
+    border-radius: 50px;
+}
+.content > a{
+    text-decoration: none;
+    font-size: 12px;
+    color:#0079D3;
+    font-family: 'IBM Plex Sans',sans-serif;
+    margin:4px 8px;
+}
+.content .svgs-container{
+    width:100%;
+    height:36px;
+    display: flex;
+}
+.svgs-container .box
+{
+    width:106px;
+    height:100%;
+    margin-right: 4px;
+    padding:8px;
+    color:#878a8c;
+    display: flex;
+    align-items: center;
+}
+.svgs-container .box i{
+    margin-right: 5px;
+}
+.svgs-container .box span{
+    font-size: 12px;
+    font-weight: 600;
+}
+.svgs-container .awards{
+    width:80px;
+    height:36px;
+    padding:8px;
+    margin-right: 8px;
+}
+.svgs-container .awards ion-icon{
+    margin-right: 5px;
+}
+.svgs-container .dots{
+    line-height: 36px;
+}
+.post-wrapper .actual-post .popUp textarea{
+    width:100%;
+    height:250px;
+    background: #F6F7F8;
+    border:none;
+    outline: none;
+    border-radius: 5px;
+}
+.post-wrapper .actual-post .popUp .anchors{
+    width:100%;
+    height:60px;
+    display:flex;
+    justify-content: flex-end;
+    padding-right:15px;
+    align-items: center;
+    border-top:1px solid #ccc;
+}
+.post-wrapper .actual-post .popUp .anchors button{
+    background: #0079D3;
+    color:#fff;
+    padding:6px 10px;
+    border-radius: 30px;
+    border:none;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+    opacity: .5;
+    pointer-events: none;
+    cursor: pointer;
+}
+.post-wrapper .actual-post .popUp .anchors button.active{
+    opacity: 1;
+    pointer-events: auto;
+}
