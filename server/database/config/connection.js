@@ -1,14 +1,23 @@
 const { Pool } = require('pg');
 require('env2')('.env');
 
-const { DB_URL } = process.env;
-if (!DB_URL) {
-  throw new Error('invalid db url');
+const { DB_URL, DATABASE_URL, NODE_ENV } = process.env;
+let url = '';
+let ssl = false;
+switch (NODE_ENV) {
+  case 'dev':
+    url = DB_URL;
+    break;
+  case 'production':
+    url = DATABASE_URL;
+    ssl = { rejectUnauthorized: false };
+    break;
+  default:
+    throw new Error('invalid db url');
 }
-
 const connection = new Pool({
-  connectionString: process.env.DB_URL,
-  ssl: false,
+  connectionString: url,
+  ssl,
 
 });
 
