@@ -1,6 +1,6 @@
 const express = require('express');
 const cookieparser = require('cookie-parser');
-
+require('env2')('.env');
 const { join } = require('path');
 const router = require('./routers');
 
@@ -24,17 +24,6 @@ app.get('/profile/:id', (req, res) => {
   res.sendFile(join(__dirname, '..', 'public', 'html', 'profile.html'));
 });
 
-// app.get('/user/posts/:id', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../public/userPosts.html'));
-// });
-
 app.use(router);
-// router.use('/sign-in', (req, res) => {
-// res.sendFile(join(__dirname, '..', 'public', 'html', 'sign-in.html'));
-// });
-
-// router.use('/signup', (req, res) => {
-//   res.sendFile(join(__dirname, '..', 'public', 'html', 'signup.html'));
-// });
 
 module.exports = app;
