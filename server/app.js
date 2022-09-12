@@ -1,6 +1,6 @@
 const express = require('express');
 const cookieparser = require('cookie-parser');
-require('env2')('.env');
+require('dotenv').config();
 const { join } = require('path');
 const router = require('./routers');
 
