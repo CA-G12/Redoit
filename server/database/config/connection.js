@@ -1,13 +1,10 @@
 const { Pool } = require('pg');
 require('dotenv').config();
 
-const { DB_URL, DATABASE_URL, NODE_ENV } = process.env;
+const { DATABASE_URL, NODE_ENV } = process.env;
 let url = '';
 let ssl = false;
 switch (NODE_ENV) {
-  case 'dev':
-    url = DB_URL;
-    break;
   case 'production':
     url = DATABASE_URL;
     ssl = { rejectUnauthorized: false };
